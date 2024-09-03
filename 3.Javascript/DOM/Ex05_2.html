@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>랜덤게임</h1>
+    <input >
+    <button onclick="answer()">도전!</button>
+    <h1>지금까지 입력한 숫자 : </h1>
+    <div></div>
+
+    
+    <script>
+
+        let ranNum = parseInt(Math.random()*100)+1;
+        
+        const answer=()=>{
+
+            if(document.querySelector("input").value==ranNum)
+            {
+                alert("정답입니다.")
+                document.querySelector("div").innerHTML=document.querySelector("div").innerHTML+`<h3 class="g">정답은 ${document.querySelector("input").value} 입니다. </h3>`
+                
+                    document.getElementsByClassName("g")[0].style.color="green"
+                    document.getElementsByClassName("g")[0].style.color="red"
+            
+            }
+            else if(document.querySelector("input").value>ranNum)
+            {   document.querySelector("div").innerHTML=document.querySelector("div").innerHTML+`<h3>${document.querySelector("input").value} 보다 작은 수 입니다.</h3>`
+                alert("삐빅!")
+            }
+            else if(document.querySelector("input").value<ranNum)
+            {   document.querySelector("div").innerHTML=document.querySelector("div").innerHTML+`<h3>${document.querySelector("input").value}  보다 큰 수 입니다.</h3>`
+                alert("삐빅!")
+            }
+            
+        }
+    </script>
+</body>
+</html>

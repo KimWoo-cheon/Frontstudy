@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 >금요일은 내일</h1>
+    <button onclick="chText()">클릭</button>
+
+    <h1 id="num">0</h1>
+    <button onclick="plus1()" >+1</button>
+    <button onclick="minus1()">-1</button>
+    <button onclick="multi2()">*2</button>
+    <button onclick="double()">^2</button>
+    <button onclick="zero()">0</button>
+
+    <script>
+        //버튼 클릭시 컨텐트를 변경
+        // document.querySelector('버튼').addEventListener('click',function(){
+        //     document.querySelector("h1").addEventListener()
+        // })   
+        console.log(document.querySelector('h1').innerText) 
+        chText=()=>{
+            document.querySelector('h1').innerText="<a href='#'>다음주 수요일은 쉬는날</a>"
+            // document.querySelector('h1').innerHTML="<a href='#'>다음주 수요일은 쉬는날</a>"
+            // innerText => content 영역에서 텍스트데이터만 다룸
+            // innerHTML => content 영역테서 태그형식의 문자열 데이터를 다룸 요소도 다룰 수 있음
+            console.log(document.querySelector('h1').innerText) // 텍스트 데이터를 콘솔에 출력
+        
+        }
+        plus1=()=>{
+            document.querySelector('#num').innerText=parseInt(document.querySelector('#num').innerText)+1;
+        }
+        minus1=()=>{
+           if(document.querySelector('#num').innerText>0){
+                document.querySelector('#num').innerText=parseInt(document.querySelector('#num').innerText)-1;
+            }  
+        }
+        multi2=()=>{
+           if(document.querySelector('#num').innerText!=0){
+                document.querySelector('#num').innerText=parseInt(document.querySelector('#num').innerText)*2;
+            }            
+        }
+        double=()=>{
+           if(document.querySelector('#num').innerText!=0){
+                document.querySelector('#num').innerText=parseInt(document.querySelector('#num').innerText)*parseInt(document.querySelector('#num').innerText);
+            }            
+        }
+        zero=()=>{
+            document.querySelector('#num').innerText=0;
+        }
+    </script>
+</body>
+</html>

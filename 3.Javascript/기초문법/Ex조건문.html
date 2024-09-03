@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //조건문
+        let age = 20;
+        //만약 age값이 20보다 크거나 같다면 '성인입니다.'
+
+        //Javascript 에서는 조건식으로 0이 아닌 다른 값이 온다면 -> true
+        if(age>=20){
+            console.log('성인입니다.')
+        }
+
+        let Java_score=parseInt(prompt('Java점수를 입력하세요', '입력'));
+        let Android_score=parseInt(prompt('Android점수를 입력하세요', '입력'));
+        let Web_score=parseInt(prompt('Web점수를 입력하세요', '입력'));
+        let avg = parseFloat(parseInt((Java_score+Android_score+Web_score)/3*100)/100)
+       
+        let grade=null
+        if(avg>=90){
+            grade='A'
+                    }
+        else if(avg>80){
+            grade='B'   
+                   }
+        else if(avg>70){
+            grade='C'   
+        }
+        else {
+            grade='F'   
+        }
+        console.log('당신의 평균은',avg,'이고',grade,'입니다.')
+
+    </script>
+</body>
+</html>

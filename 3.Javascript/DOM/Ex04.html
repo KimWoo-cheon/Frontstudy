@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="여기 입력">
+    <button onclick="send()">클릭</button>
+    <h1></h1>
+    
+    <script>
+        //버튼 클릭시 input태그에 적은 내용을
+        //h1태그에 출력
+
+        send=()=>{
+            // 1. input태그에 적은 내용
+            console.log(document.querySelector("input").value)
+           document.querySelector("h1").innerText = document.querySelector("input").value
+        }
+    </script>
+</body>
+</html>

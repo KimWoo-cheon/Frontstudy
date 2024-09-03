@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수 : 특정 기능(코드) 따로 빼놓는 것
+        function hello(){
+            console.log("hello Javascript")
+        }
+        hello()
+        
+        // let 지역변수
+        for(let i=0; i<3; i++){
+
+        }
+        console.log(i)
+
+        //var 함수내 전역변수로 사용가능하다
+        for(var i=0; i<3; i++){
+
+        }
+         console.log(i)
+
+        // 정수 데이터 2개를 넘겨받아서 
+        // 더한 결과를 반환 해주는 add라는 함수
+
+        //기본적으로 var로 생성되므로 변수 선언 키워드 필요 없음
+
+        //함수 선언문 --> 함수 선언시 var
+        function add(a,b){
+            return a+b
+        }
+        add(10,20);
+        console.log(add(10,20))
+
+        var add=10;
+        console.log(add)
+
+        let add=function(a,b){
+            return a+b
+        }
+        
+         add=10;
+
+         //함수 표현식 --> 함수를 변수에 담아서 사용
+         //변수 선언 키워드의 특성 이용
+        const add=function(a,b){
+            return a+b
+        }
+        //화살표 함수
+        const add3 = (a,b)=>{
+            return a+b
+        }
+        
+
+    </script>
+</body>
+</html>

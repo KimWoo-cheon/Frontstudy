@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: blue;
+            width : 100px;
+            height: 100px;
+            box-sizing: border-box;
+           
+        }
+    </style>
+</head>
+<body>
+    <div><h1>아</h1></div>
+    <button>원</button>
+    <button class='abb'>직사각형</button>
+    <button>초기화</button><br>
+    <button>회전</button>
+    <button>확대</button>
+    <script>
+        document.querySelectorAll("button")[0].addEventListener('click',function(){
+            document.querySelector("div").style.height='100px'
+            document.querySelector("div").style.width='100px'
+            document.querySelector("div").style.borderRadius='50%'
+            document.querySelector("div").style.backgroundColor='orange'
+        })
+        document.querySelector(".abb").addEventListener('click',function(){
+            document.querySelector("div").style.height='100px'
+            document.querySelector("div").style.width='100px'
+            document.querySelector("div").style.borderRadius='0%'
+            document.querySelector("div").style.width='50%'
+            document.querySelector("div").style.backgroundColor='tomato'
+        })
+        document.querySelectorAll("button")[2].addEventListener('click',function(){
+            document.querySelector("div").style.height='100px'
+            document.querySelector("div").style.width='100px'
+            document.querySelector("div").style.borderRadius='0%'
+            document.querySelector("div").style.backgroundColor='blue'
+            document.querySelector("div").style.rotate='0deg'
+            
+        })
+        document.querySelectorAll("button")[3].addEventListener('click',function(){
+            document.querySelector("div").style.rotate='+90deg'
+            document.querySelector("div").style.backgroundColor='green'
+        })
+        document.querySelectorAll("button")[4].addEventListener('click',function(){
+            document.querySelector("div").style.height='200%'
+            document.querySelector("div").style.width='200%'
+            
+            document.querySelector("div").style.backgroundColor='violet'
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        button:active +h1{
+            color:red;
+        }
+    </style> -->
+</head>
+<body>
+    <button>클릭</button>
+    <h1>DOM 사용</h1>
+    <h1>내일은 금요일</h1>
+    
+   
+
+    
+    <script>
+        //DOM : Document Object Model
+        //      HTML 태그에 접근할 수 있도록 Javascript객체로 이루어진 문서
+        document.querySelector("button").style.color='red'
+
+        //버튼 클릭시 h1태그의 색상을 빨간색으로 변경
+        //첫번째 클릭 -> 빨강
+        // document.querySelector()
+        // 선택자를 통해서 검색된 태그중 제일 첫번째 태그만 가져오겠습니다.
+        // document.querySeoloctorAll()
+        // 선택자를 통해서 검색된 태그를 전부 배열로 가져온다
+        // NodeList(요소(태그개체)들이 담긴 배열) 주의! ,pop,push 사용x
+        console.log(document.querySelectorAll('h1'))
+        let cnt=0
+        document.querySelector("button").addEventListener('click',function(){
+            if(cnt%3==0){document.querySelectorAll("h1")[0].style.color='red'
+                         document.querySelectorAll("h1")[1].style.color='violet'
+            
+        }
+            else if(cnt%3==1){document.querySelectorAll("h1")[0].style.color='blue'
+            
+        }
+            else if(cnt%3==2){document.querySelectorAll("h1")[1].style.color='green'
+                              document.querySelectorAll("h1")[0].style.color='gray'
+             
+        }
+        cnt++
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* flex : 아이템간의공간 배분 및 정렬 
+        -> container + items 
+        - container : flex 속성의 영향을 받는 공간 
+        - item : 설정된 속성에 따라서 배치되는 요소
+        
+        -메인축(main-axis) : item이 배치되는 축의 방향
+        -교차축(cross-axis) : main축과 수직이 되는 방향 */
+        .container{
+            height: 600px;
+            background-color: beige;
+            display : flex; 
+
+            /* flex-direction : item들이 배치되는 축의 방향을 결정 
+                - row : 가로배치(기본값)
+                - row - reverse : 가로 역순 배치
+                - column : 세로 배치
+                - column-reverse: 세로 역순 배치 */
+            flex-direction : row; 
+
+            /* flex-wrap : 아이템들의 줄바꿈을 결정하는 속성 
+                - warp : 줄바꿈 o 다음줄로 넘어감
+                - nowrap : 줄바꿈x(기본값)
+                - wrap-reverse: 역순 줄바꿈(아래에서 위로) */
+            flex-wrap: wrap;
+
+            /* justify-content : 메인축의 방향의 정렬을 결정하는 속성 
+                - flex-start : 시작점 정렬(기본값) 
+                - flex-end : 끝점 정렬
+                - center : 가운데 정렬
+                - space-between : 양 끝 여백 없이 아이템 사이에 균일한 여백
+                - space-evenly : 양 끝과 아이템 사이에 균일여백
+                - space-around : 아이템을 둘러싼 균일한 여백 */
+            justify-content: space-evenly;
+            align-content: space-evenly;
+
+            /* align-items : 교차축 방향으로 정렬을 결정하는 속성 
+                - flex-start : 시작점 정력
+                - flex-end : 끝점 정렬
+                - center : 가운데 정렬
+                - stretch : 교차축방향으로 끝까지 늘어나는 정렬
+                            (높이지정 안되어있을때 기본값)*/
+            align-items: center;
+
+        }
+        .item{
+            background-color: lightblue;
+            width: 250px;
+            height: 250px;
+            border: solid black 1px;
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 250%;
+            /* em : 부모요소이 배수 rem : html요소의 배수 */
+            font-weight: 800;
+            flex-wrap: wrap;
+            /* 실습. item을 컨테이너로 만들고, Box글자를 아이템으로 만들어서 가운데 정렬 */
+        }
+        #dd{
+            height: 10px;
+            width: 10px;
+            background-color:red;
+        }
+</style>
+<body>
+    <!-- div.container>div.item{box$}*4 -->
+    <div class="container">
+        <div class="item"><div id="dd"></div><h6>box1</h6> <h4>Bigbox</h4></div>
+        <div class="item">box2</div>
+        <div class="item">box3</div>
+        <div class="item">box4</div>
+    </div>
+ 
+</body>
+</html>

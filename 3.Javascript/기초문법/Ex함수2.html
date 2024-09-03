@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const getDivisor=(num)=>{
+            let result=num+'의 약수 '
+            for(let i=1; i<num+1; i++){
+                if(num%i==0){
+                   result=result+i+','
+                }
+            }
+            console.log(result)
+        }
+        getDivisor(10);
+        getDivisor(16);
+        getDivisor(25);
+        
+        const getDivisor_num=(num)=>{
+            let divisior=[]
+            for(let i=1; i<num+1; i++){
+                if(num%i==0){
+                divisior.push(i)
+                }
+            }
+            return divisior
+        }
+       
+        let nums=[]
+        for(let i=0; i<10; i++){
+            nums[i]=parseInt(Math.random()*100)+1;
+        }
+        
+        let cnt =0;
+        for(let i=0; i<10; i++){
+            getDivisor_num(nums[i])
+            for(let j=0; j<(getDivisor_num(nums[i])).length; j++){
+            if(getDivisor_num(nums[i]).length==2){
+                cnt++
+                }
+            }
+        }
+        console.log(nums+'중 소수의 개수는 '+cnt+'개')
+    </script>
+</body>
+</html>

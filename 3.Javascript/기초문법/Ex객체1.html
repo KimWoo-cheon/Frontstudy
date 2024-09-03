@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체 : 현실에 있는 특정 대상을 코드로 표현할 수 있는 수단
+        //      >>> 데이터와 기능을 한번에 묶어서 다룰 수 있는 방법
+        // 휴대폰(번호, 기종, 전화를 걸다, 메세지를 보내다)
+        let name='우천'
+        // {}--> 객체
+        // key -value
+        let phone={
+            number : '01029947343',
+            kind : 'iphone',
+            call : function(){
+                console.log('전화를 걸다')
+            },
+            message : function(){
+                 this.call()            },
+        }
+        console.log(phone)
+        console.log(phone.number)
+        console.log(phone.kind)
+        phone.call()
+        console.log(phone.message())
+        phone.message()
+    </script>
+</body>
+</html>

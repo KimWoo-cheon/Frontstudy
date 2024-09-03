@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 전체선택자 */
+        *{
+            color:blue
+        }
+        /* 2. 타입선택자 */
+        h1{
+            color : aqua
+        }
+        li{
+            color: brown;
+        }
+               
+        /* 3. 클래스 선택자(.) */
+        /* Java수업을 들어온 선생님들만 배경색을 yellow */
+        .java{
+            background-color: yellowgreen;
+        }
+        /* 4. 아이디 선택자(#) */
+        /* Python수업을 들어온 선생님의 배경색을 green */
+        #python{
+            background-color: green;
+        }
+        /* DB수업을 들어온 선생님의 배경색을 tomato */
+        #db{
+            background-color: tomato;
+        }
+        /* CSS우선순위는 고유할수록 높음 */
+
+        /* 실습 */
+        /* 1. body를 기준으로 해서 모든 li요소의 글씨크기를 50px로 변경 */
+        body li{
+            font-size: 50px;
+        }
+        /* 2. li요소 중에서 class이름이 java인 친구들 기울임꼴로 변경 */
+        li.java{
+            font-style: italic;
+        }
+        /* 3. li를 기준으로해서 class이름이 java인 요소에 글씨 두께를 두껍게 */
+        li~.java{
+            font-weight: bold;
+        }
+        /* 4. class이름이 java인 li 친구를 기준으로해서 
+        일반동위(형제)선택자를 사용하여
+        id가 db인요소의 글씨 색을 보라색으로 변경 */
+        li.java ~ #db{
+            color : violet
+        }
+
+        /* test */
+        /* p.java ~ #python{
+            color : violet
+        } */
+        /* p.java ~.java{
+            color : yellow
+        } */
+
+        /* 가 */
+    </style>
+</head>
+<body>
+    <h1> DCX 빅데이터반 </h1>
+    <ul> 
+        <li class="java"> 채수민 </li>
+        <li class="java"> 김운비 </li>
+        <li class="java"> 임승환 </li>
+        <p class="java"> 송승호 </p>
+        <p class="java"> 박지승 </p>
+        <li class="java" id="db"> 박수현 </li>
+        <li id="python"> 임영주 </li>
+    </ul>
+</body>
+</html>

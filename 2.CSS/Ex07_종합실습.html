@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        sup{
+            display: none;
+        }
+        a:hover{
+        color : red;     
+        }
+    
+       a:hover+sup{
+
+        display: inline;
+        
+        }
+        a:hover~p{
+
+            color : red;
+
+}   
+    
+
+       
+       /* p:hover{
+        display:inline;
+       } */
+    </style>
+     
+    
+</head>
+<body>
+     <a href="https://www.naver.com/" >네이버</a>
+     <sup>www.naver.com</sup>
+     <br>
+    
+
+    <a href="https://www.daum.net/">다음</a>
+    <sup>www.daum.net</sup>
+    <br>
+
+    <p>test1234</p>
+</body>
+</html>

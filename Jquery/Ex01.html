@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>신나는 금요일</h1>
+    
+    <button>클릭</button>
+    
+    <hr>
+
+    <input>
+    <button id="btnInput">입력</button>
+    <h1 id="result"></h1>
+    <table>
+    <tr>
+        <td class="rank"></td>
+        <td class="name">ㅇㅎ</td>
+        <td class="open">ㅁㅁ</td>
+    </tr>
+</table>
+    </body>
+
+    <!-- Jquery 라이브러리 import 하는 부분 -->
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script>
+        
+        let cnt=0;
+        // 버튼 클릭시 h1태그 색깔을 빨간색으로 변경 jquery 사용
+       
+        // document.querySelector("button").addEventListener('click',function(){
+        //     document.querySelector("h1").style.color='red'
+        //         console.log($('h1'))
+        //         cnt++
+        // })
+
+       
+        // Jquery 에서는 querySelectorAll 형태  -> 배열형태>인덱싱필요
+        // $('button')[0].addEventListener('click',function(){
+        //     $('h1')[0].style.color='blue'
+        //     cnt++
+
+        // })
+
+   
+        console.log($('h1'),$('td.rank'))
+        // Jquery 별도의 기능이 존재
+        $('button').on('click',function(){
+        
+            $('h1').css('color','green')
+            $('h1').text("내일은 주말")
+            $('.rank').text("아")
+
+        })
+
+        $('#btnInput').on('click',function(){
+            $('#result').text(`${$('input').val()}`)
+            console.log(document.getElementById('result').innerText)
+            })
+        
+
+    </script>
+</body>
+</html>

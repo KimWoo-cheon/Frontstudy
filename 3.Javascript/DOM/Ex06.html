@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="preImg()">이전</button>
+    <img src="./img1.jpg" alt="">
+    <button onclick="nextImg()">다음</button>
+   
+    <script>
+        let cnt=0;
+        let cntArray=["./img1.jpg","./im2.jpg","./img3.jpg"]
+        const nextImg=()=>{
+            cnt++
+            if(cnt%3==0){
+                document.querySelector('img').src=cntArray[0] ;
+                
+            }
+            else if(cnt%3==1){document.querySelector('img').src="./im2.jpg";
+               
+            }
+            else if(cnt%3==2){document.querySelector('img').src="./img3.jpg";
+               
+            }   
+        }
+        const preImg=()=>{
+            cnt--
+            if(cnt%3==0){
+                document.querySelector('img').src="./img1.jpg" ;
+                
+            }
+            else if(cnt%3==1){document.querySelector('img').src="./im2.jpg";
+                
+            }
+            else if(cnt%3==2){document.querySelector('img').src="./img3.jpg";
+                
+            }
+            
+        }
+    </script>
+</body>
+</html>

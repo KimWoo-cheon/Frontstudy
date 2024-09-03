@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            
+            display: flex;
+            flex-wrap: wrap;
+            
+            justify-content: space-evenly;
+        }
+        .card:hover{
+            background-color: lightcoral;
+        }
+        .card{
+            background-color: lightgoldenrodyellow;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            margin-bottom: 40px;
+
+        }
+        .imgSec{
+            width: 400px;
+            height:400px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 80px;
+        }
+        .textSec{
+            text-align: center;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .img1{
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/ea6608b4f72563b360da5c44c946ddc7.png);
+        }
+        .img2{
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/387609a495e841413a453ce22b555840.png);
+        }
+        .img3{
+            background-image: url(https://www.baskinrobbins.co.kr/upload/product/main/2ecbeb37eba3e541c52f8df19eaa0b5a.png);
+        }
+        /* 카드별로 아이스크림 이미지 넣기 */
+        /* background 속성 : 요소의 배경 이미지 설정 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="imgSec img1"></div>
+            <div class="textSec"> 베리베리 스트로베리 </div>
+        </div>
+        <div class="card">
+            <div class="imgSec img2"></div>
+            <div class="textSec"> 사랑에 빠진 딸기</div>
+        </div>
+        <div class="card">
+            <div class="imgSec img3"></div>
+            <div class="textSec"> 러브미 </div>
+        </div>
+    </div>
+</body>
+</html>

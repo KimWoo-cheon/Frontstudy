@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <p>Like ♥</p>
+    <p id="num">0</p>
+    <br>
+    <button onclick="plus1()" >+1증가</button>
+    <button onclick="minus1()">-1감소</button>
+    <button onclick="zero()">초기화</button>
+
+    <script>
+
+        plus1=()=>{
+            document.querySelector('#num').innerText=parseInt(document.querySelector('#num').innerText)+1;
+        }
+        minus1=()=>{
+           if(document.querySelector('#num').innerText>0){
+                document.querySelector('#num').innerText=parseInt(document.querySelector('#num').innerText)-1;
+            }  
+        }
+     
+        zero=()=>{
+            document.querySelector('#num').innerText=0;
+        }
+    </script>
+</body>
+</html>

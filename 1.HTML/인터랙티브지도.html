@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map with Nongsaro API</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="http://api.nongsaro.go.kr/css/api.css" rel="stylesheet" type="text/css">
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Map with Nongsaro API</h1>
+    <div id="map"></div>
+    <div id="nongsaroApiLoadingArea"></div>
+    <div id="nongsaroApiLoadingAreaResult"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script type="text/javascript" src="http://api.nongsaro.go.kr/js/framework.js"></script>    
+    <script type="text/javascript" src="http://api.nongsaro.go.kr/js/openapi_nongsaro.js"></script>    
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof nongsaroOpenApiRequest !== 'undefined' && typeof nongsaroOpenApiRequest.requestApi === 'function') {
+                // 농사로 API 설정
+                nongsaroOpenApiRequest.apiKey = "202406268Y2HQAEBIABC7QRTJVFTLQ"; // 변경할 부분 1
+                nongsaroOpenApiRequest.serviceName = "localSpcprd";
+                nongsaroOpenApiRequest.operationName = "selectAreaSidoLst";
+                nongsaroOpenApiRequest.htmlArea = "nongsaroApiLoadingArea";
+                nongsaroOpenApiRequest.callback = function(data) {
+                    // 농사로 API 호출 후 콜백 함수
+                    console.log(data); // 응답 데이터 확인
+
+                    // 지도 초기화
+                    var map = L.map('map').setView([36.5, 127.8], 7); // 대한민국 중심 좌표와 초기 확대 레벨 설정
+
+                    // OSM 타일 레이어를 추가합니다.
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    // 응답 데이터가 예상한 구조인지 확인
+                    if (data && data.body && data.body.items && data.body.items.item) {
+                        var regions = data.body.items.item;
+                        regions.forEach(function(region) {
+                            var name = region.sidoNm;
+                            var lat = parseFloat(region.latitude);
+                            var lon = parseFloat(region.longitude);
+
+                            if (!isNaN(lat) && !isNaN(lon)) {
+                                var marker = L.marker([lat, lon]).addTo(map)
+                                    .bindPopup('<b>' + name + '</b>');
+
+                                marker.on('click', function() {
+                                    map.setView([lat, lon], 10); // 지역 클릭 시 확대
+                                });
+                            } else {
+                                console.log("Invalid coordinates for region: " + name);
+                            }
+                        });
+                    } else {
+                        console.error("Unexpected data structure:", data);
+                    }
+                };
+
+                // 농사로 API 요청 호출
+                nongsaroOpenApiRequest.requestApi();
+            } else {
+                console.error("nongsaroOpenApiRequest or requestApi function is not defined.");
+            }
+        });
+    </script>
+</body>
+</html>

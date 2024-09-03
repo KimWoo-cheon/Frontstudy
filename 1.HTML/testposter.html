@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농가 홍보 포스터</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .eco-mark {
+            max-width: 50px;
+            margin: 20px auto;
+        }
+        .intro, .crops, .contact {
+            padding: 20px;
+        }
+        .intro h2, .crops h2, .contact h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+        .intro p, .crops p, .contact p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+        .crops img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (min-width: 600px) {
+            header h1 {
+                font-size: 36px;
+            }
+            .intro, .crops, .contact {
+                padding: 20px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Experience Freshness!</h1>
+            <h2>농가 이름</h2>
+            <img src="eco-certification.png" alt="친환경 인증마크" class="eco-mark">
+        </header>
+        <section class="intro">
+            <h2>소개</h2>
+            <p>농가의 철학이나 특별한 점을 강조하는 소개 문구.</p>
+        </section>
+        <section class="crops">
+            <h2>재배 작물</h2>
+            <div>
+                <img src="crop1.jpg" alt="작물 1">
+                <p>작물 1: 작물 1에 대한 설명과 특성.</p>
+            </div>
+            <div>
+                <img src="crop2.jpg" alt="작물 2">
+                <p>작물 2: 작물 2에 대한 설명과 특성.</p>
+            </div>
+            <!-- 추가 작물 정보를 여기에 추가할 수 있습니다 -->
+        </section>
+        <footer class="contact">
+            <h2>연락처</h2>
+            <p>전화번호: 010-1234-5678</p>
+            <p>이메일: farm@example.com</p>
+            <p>웹사이트: www.farmwebsite.com</p>
+            <p>소셜 미디어: @farmhandle</p>
+            <img src="eco-certification.png" alt="친환경 인증마크" class="eco-mark">
+        </footer>
+    </div>
+</body>
+</html>

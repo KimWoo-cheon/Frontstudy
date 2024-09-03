@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="preImg()">이전</button>
+    <img src="./img1.jpg" alt="">
+    <button onclick="nextImg()">다음</button>
+   
+    <script>
+        let cnt=0;
+        let cntArray=["./img1.jpg","./im2.jpg","./img3.jpg"]
+       
+        const nextImg=()=>{
+            cnt++
+            
+                document.querySelector('img').src=cntArray[Math.abs(cnt%(cntArray.length))] 
+                console.log(cnt)
+
+            }   
+    
+        const preImg=()=>{
+            cnt--
+            if(cnt<0){
+                cnt=(cntArray.length-1);}
+                document.querySelector('img').src=cntArray[Math.abs(cnt%(cntArray.length))] 
+                console.log(cnt)
+        }
+    </script>
+</body>
+</html>

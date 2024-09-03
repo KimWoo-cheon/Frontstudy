@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Math.random() --> 랜덤수 생성 방법 0부터 1 미만(실수)
+        let num1 =null
+        while(true){
+            if(num1==0){
+                    break;
+                }
+            else{
+            let ranNum = parseInt(Math.random()*10)+1;
+            
+            while(true){
+                num1 = prompt('숫자를 입력해주세요','1~10')
+                if(num1==0){
+                    break;
+                }
+                else if(ranNum>num1){
+                    alert('입력한 숫자보다 큰 수 입니다.')
+
+                }
+                else if(ranNum<num1){
+                    alert('입력한 숫자보다 작은 수 입니다.')
+                }
+                else if(ranNum=num1){
+                    alert('정답!')
+                    break;    
+                }
+                else{
+
+                }
+            
+            }
+        }
+        }
+         
+   
+        
+    </script>    
+</body>
+</html>

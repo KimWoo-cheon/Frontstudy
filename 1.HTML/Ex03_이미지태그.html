@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 이미지 태그 </h1>
+    <img src="" alt="이미지태그">
+    <h4> 절대경로로 이미지 가져오기 </h4>
+    <p>
+        장점 : 이미지를 파일로 가지고 있지 않아도 사용 가능 <br>
+        단점 : 해당 경로에서 이미지가 사라지면, 더이상 사용 불가능 <br>
+        사용 : 외부 페이지의 파일을 가져올 때
+    </p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBs8YxAS9R539wZB3r4K59Yivm56LCn9DG7w&s" alt="이미지태그">
+    <hr>
+    <h4> 상대경로로 이미지 가져오기 </h4>
+    <p>
+        상위 기준 : ../ <br>
+        현재 기준 : ./ (생략 가능) <br>
+        루트 기준 : /
+    
+    </p>
+    <img src="./dino.jpg" alt="" height="50" width="50"><br>
+    <img src="dino.jpg" alt="">
+</body>
+</html>
